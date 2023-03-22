@@ -7,25 +7,31 @@
                     <h3>{{pokemon.name}} ID </h3>
                     <i>{{pokemon.id}}</i>
                 </div>
-               <div class="card__img">
-                <div class="img__backgroud">
-                    <img src="{{pokemon.sprites.front_default}}">
+                <div class="card__img">
+                    <div class="img__backgroud">
+                        <img src="{{pokemon.sprites.front_default}}">
+                    </div>
                 </div>
-               </div>
-               <div class="card__atributs">
-                   <p>
-                       Altura:
-                       <span>{{pokemon.height}}</span>
-                   </p>
-                   <p>
-                       Peso:
-                       <span>{{pokemon.weight}}</span>
-                   </p>
-                   <p>
-                       EXP 
-                       <span>{{pokemon.base_experience}}</span>
-                   </p>
-               </div>
+                <div class="card__atributs">
+                    <p>
+                        <strong>
+                            Height:
+                        </strong>
+                        <span>{{pokemon.height}}</span>
+                    </p>
+                    <p>
+                        <strong>
+                            Weight:
+                        </strong>
+                        <span>{{pokemon.weight}}</span>
+                    </p>
+                    <p>
+                        <strong>
+                            EXP:
+                        </strong>
+                        <span>{{pokemon.base_experience}}</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
