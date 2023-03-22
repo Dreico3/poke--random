@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    gap: 4rem;
+    padding: 1em;
+    a{
+        text-decoration: none;
+        padding: .2em;
+    }
+    
+    a:hover{
+        background-color: #ffe1c7;
+        border-radius: 5px;
+    }
+}
