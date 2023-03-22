@@ -8,14 +8,15 @@ import { Pokemon } from '../interfaces/Pokemon.interface';
   providedIn: 'root'
 })
 export class PokeService {
-  url:string='https://pokeapi.co/api/v2/pokemon/'
+  url:string='https://pokeapi.co/api/v2/pokemon/';
+  urlAlet:string='https://pokeapi.co/api/v2/pokemon/?offset=40&limit=20';
   constructor(
     private http:HttpClient
   ) { }
 
-  getPagePokemon(link=this.url): Observable<Page> {
-    console.log('traer pokemones con la pagina incluida 2');
-    return this.http.get<Page>(link).pipe(
+  getPagePokemon(page:number,link=this.url): Observable<Page> {
+    console.log('atrapando pokemones ...');
+    return this.http.get<Page>(`https://pokeapi.co/api/v2/pokemon/?offset=${page}0&limit=20`).pipe(
       mergeMap(pagina => {
         const pokemonObsArray = pagina.results.map(poke => this.http.get<Pokemon>(poke.url));
 
@@ -28,7 +29,7 @@ export class PokeService {
         );
 
       }),
-      tap(ele => console.log('esto regresa el service', ele))
+      tap(ele => console.log('lo que trae la red ...', ele))
     );
   }
 }
