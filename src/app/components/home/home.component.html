@@ -1,1 +1,33 @@
-<p>home works!</p>
+<article>
+    <section class="container__cards">
+        <h2>seccion de cards</h2>
+        <div class="cards">
+            <div class="card" *ngFor="let pokemon of listaPokemon">
+                <div class="card__title">
+                    <h3>{{pokemon.name}} ID </h3>
+                    <i>{{pokemon.id}}</i>
+                </div>
+               <div class="card__img">
+                <div class="img__backgroud">
+                    <img src="{{pokemon.sprites.front_default}}">
+                </div>
+               </div>
+               <div class="card__atributs">
+                   <p>
+                       Altura:
+                       <span>{{pokemon.height}}</span>
+                   </p>
+                   <p>
+                       Peso:
+                       <span>{{pokemon.weight}}</span>
+                   </p>
+                   <p>
+                       EXP 
+                       <span>{{pokemon.base_experience}}</span>
+                   </p>
+               </div>
+            </div>
+        </div>
+    </section>
+    <button (click)="mostrar()">traer</button>
+</article>
