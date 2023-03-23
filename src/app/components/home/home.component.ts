@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit{
     console.log(this.pokeService.getHistorial());
   }
 
-  getRandomInt(min:number=1, max:number=11):number {
+  getRandomInt(min:number=1, max:number=128):number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);

@@ -1,7 +1,7 @@
 import { Pokemon } from "./Pokemon.interface";
 
-export interface Page{
-    loading:boolean,
+export interface Page {
+    loading: boolean,
     count: number;
     next: null | string;
     previous: null | string;
@@ -9,4 +9,6 @@ export interface Page{
         { name: string, url: string }
     ];
     data: Pokemon[];
+    moment: null | string;
+    numbrePage: number | null;
 }
