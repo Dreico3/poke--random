@@ -1,5 +1,18 @@
 <section>
     <h3>Historial</h3>
-    <p>aqui deveria mostrarse el historial</p>
-    <button (click)="mostrar()">mostrar hora</button>
+    <div>
+        <div *ngFor="let page of histoy">
+            <p>
+                <strong>Pagina: {{page.numbrePage}}</strong>
+                <span>Fecha y hora de consulta: <i>{{page.moment}}</i></span>
+            </p>
+            <div *ngIf="page.show">
+                <div *ngFor="let poke of page.data">
+                    <h6>{{poke.name}}</h6>
+                    <img src="{{poke.sprites.front_default}}">
+                </div>
+            </div>
+            <button (click)="mostrar(page)">pokemons</button>
+        </div>
+    </div>
 </section>

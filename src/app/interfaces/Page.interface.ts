@@ -11,4 +11,5 @@ export interface Page {
     data: Pokemon[];
     moment: null | string;
     numbrePage: number | null;
+    show:boolean|null;
 }

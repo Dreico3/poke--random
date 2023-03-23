@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Page } from 'src/app/interfaces/Page.interface';
 import { PokeService } from 'src/app/services/poke.service';
 
 @Component({
@@ -8,18 +9,20 @@ import { PokeService } from 'src/app/services/poke.service';
 })
 export class HistorialComponent implements OnInit{
   
-  
-
+  histoy:Page[]=[]
+  flag:boolean=false;
   constructor(
     private pokeSevice:PokeService
   ){}
 
   ngOnInit(): void {
-    console.log('como estas bb empesemos')
+    console.log('como estas bb empesemos');
+    this.histoy=this.pokeSevice.getHistorial();
   }
 
-  mostrar(){
-    console.log(this.pokeSevice.gethour())
+  mostrar(page:Page){
+    page.show=!page.show
+    console.log('cambia??');
   }
 
 

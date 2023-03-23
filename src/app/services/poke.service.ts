@@ -32,7 +32,7 @@ export class PokeService {
         return forkJoin(pokemonObsArray).pipe(
 
           map(pokemonArray => {
-            return { ...pagina, data: pokemonArray, moment:this.gethour(), numbrePage:page };
+            return { ...pagina, data: pokemonArray, moment:this.gethour(), numbrePage:page,show:false };
           })
 
         );
