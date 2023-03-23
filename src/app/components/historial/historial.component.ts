@@ -16,13 +16,11 @@ export class HistorialComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    console.log('como estas bb empesemos');
     this.histoy=this.pokeSevice.getHistorial();
   }
 
   mostrar(page:Page){
     page.show=!page.show
-    console.log('cambia??');
   }
 
 

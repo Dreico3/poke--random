@@ -1,18 +1,24 @@
 <section>
-    <h3>Historial</h3>
+    <div class="history__title">
+        <h3>History</h3>
+    </div>
     <div>
-        <div *ngFor="let page of histoy">
-            <p>
+        <div class="hitory__container" *ngFor="let page of histoy">
+            <div class="container__history">
                 <strong>Pagina: {{page.numbrePage}}</strong>
                 <span>Fecha y hora de consulta: <i>{{page.moment}}</i></span>
-            </p>
-            <div *ngIf="page.show">
-                <div *ngFor="let poke of page.data">
+                <div class="btn__img">
+                    <button (click)="mostrar(page)">
+                        <div class="pokeimg"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="history__pokemons" *ngIf="page.show">
+                <div class="card__pokemon" *ngFor="let poke of page.data">
                     <h6>{{poke.name}}</h6>
                     <img src="{{poke.sprites.front_default}}">
                 </div>
             </div>
-            <button (click)="mostrar(page)">pokemons</button>
         </div>
     </div>
 </section>

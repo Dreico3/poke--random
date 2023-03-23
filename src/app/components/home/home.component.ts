@@ -10,13 +10,17 @@ import { PokeService } from 'src/app/services/poke.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
+  
   page$:Observable<Page>=EMPTY;
   listaPokemon:Pokemon[]=[];
   infi=interval(10000);
+  
   constructor(
     private pokeService:PokeService
   ){}
+  
   ngOnInit(): void {
+    this.pokeService.getPagePokemon(this.getRandomInt()).subscribe(data=>this.listaPokemon=data.data);
     this.infi.subscribe(
       n=>{
         this.pokeService.getPagePokemon(this.getRandomInt()).subscribe(data=>this.listaPokemon=data.data);
@@ -24,15 +28,10 @@ export class HomeComponent implements OnInit{
     )
   }
 
-  mostrar(){
-    
-    console.log('mostramos los pokemones')
-    console.log(this.pokeService.getHistorial());
-  }
-
   getRandomInt(min:number=1, max:number=128):number {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
+
 }
