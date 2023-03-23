@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
   mostrar(){
     
     console.log('mostramos los pokemones')
-    console.log(this.getRandomInt(1,10))
+    console.log(this.pokeService.getHistorial());
   }
 
   getRandomInt(min:number=1, max:number=11):number {
