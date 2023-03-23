@@ -13,12 +13,12 @@ export class HomeComponent implements OnInit{
   
   page$:Observable<Page>=EMPTY;
   listaPokemon:Pokemon[]=[];
-  infi=interval(10000);
+  infi=interval(60000);
   
   constructor(
     private pokeService:PokeService
   ){}
-  
+
   ngOnInit(): void {
     this.pokeService.getPagePokemon(this.getRandomInt()).subscribe(data=>this.listaPokemon=data.data);
     this.infi.subscribe(
